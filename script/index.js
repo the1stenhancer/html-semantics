@@ -56,3 +56,31 @@ navLinks.forEach((value) => {
     });
 });
 
+
+
+// Fetching resources using the Fetch API
+
+const request = new Request("https://luisZ732.pythonanywhere.com/api/predictions/");
+
+const myHeaders = new Headers();
+myHeaders.append('Accept', 'application/json');
+
+const myInit = {
+    method: 'GET',
+    headers: myHeaders,
+    mode: 'no-cors'
+}
+
+const response = await fetch(request, myInit);
+
+if (response.ok) {
+    console.log(`data was received`);
+    const data = await response.json();
+    console.log(`Data:\n${data}`);
+} else {
+    console.log(`error during request`);
+    request.headers.forEach((value) => {
+        console.log(`${value}\n`);
+    });
+}
+

@@ -18,3 +18,4 @@ export const menuBar = document.querySelector('nav ul');
 
 // navigation links
 export const navLinks = document.querySelectorAll('nav ul li a');
+
